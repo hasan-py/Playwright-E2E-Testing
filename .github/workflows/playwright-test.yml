@@ -6,8 +6,9 @@ on:
       - master
 
 jobs:
-  test:
+  playwright:
     runs-on: ubuntu-latest
+   
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -19,9 +20,7 @@ jobs:
 
       - name: Navigate to client folder
         working-directory: ./client
-
-      - name: Install dependencies
-        run: npm ci
+        run: npm install
 
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
