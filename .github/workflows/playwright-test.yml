@@ -7,20 +7,18 @@ on:
 
 jobs:
   playwright:
+    timeout-minutes: 60
     runs-on: ubuntu-latest
-   
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: lts/*
 
       - name: Navigate to client folder
         working-directory: ./client
-        run: npm install
+        run: pwd
 
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
