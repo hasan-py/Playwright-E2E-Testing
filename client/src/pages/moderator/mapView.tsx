@@ -85,8 +85,9 @@ export default function MapView(props: any) {
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
 
-            {data?.map((item: any) => (
+            {data?.map((item: any, key: number) => (
               <Marker
+                key={key}
                 position={[item?.reviews?.latitude, item?.reviews?.longitude]}
               >
                 <Popup minWidth={150}>
@@ -100,8 +101,9 @@ export default function MapView(props: any) {
 
                       {item?.reviews ? (
                         <Flex alignItems={"center"}>
-                          {[...Array(+item?.reviews?.rating)]?.map((star) => (
+                          {[...Array(+item?.reviews?.rating)]?.map((star, key) => (
                             <StarIcon
+                              key={key}
                               marginRight={1}
                               type="increase"
                               color="yellow.500"
