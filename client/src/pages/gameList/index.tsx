@@ -38,8 +38,8 @@ export default function Home() {
 
       {!isLoading && data?.length > 0 ? (
         <div className="pb-16 m-16 grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-2 md:gap-4 lg:gap-8">
-          {data?.map((item: any) => (
-            <div className="col-span-1">
+          {data?.map((item: any, key: number) => (
+            <div key={key} className="col-span-1">
               <GameCard item={item} />
             </div>
           ))}

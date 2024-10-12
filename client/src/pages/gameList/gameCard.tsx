@@ -27,8 +27,8 @@ export default function GameCard({ item }: { item: any }) {
           />
           {item?.reviews?.length > 0 ? (
             <div className="absolute bottom-0 right-0 bg-white flex item-center shadow-xl px-2 py-1 m-2 rounded-full">
-              {[...Array(Math.floor(+item?.avgRating))]?.map((_) => (
-                <StarIcon mx={"1px"} color="#f59e0b" />
+              {[...Array(Math.floor(+item?.avgRating))]?.map((_, key) => (
+                <StarIcon key={key} mx={"1px"} color="#f59e0b" />
               ))}
               <span className="text-xs font-bold ml-1 mr-1">
                 {+item?.avgRating?.toFixed(2)}
