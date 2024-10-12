@@ -16,20 +16,16 @@ jobs:
         with:
           node-version: lts/*
 
-      - name: Navigate to client folder
-        working-directory: ./client
-        run: pwd
-
-      - name: Install Client
-        run: npm install
-
       - name: Install dependencies
+        working-directory: ./client
         run: npm ci
 
       - name: Install Playwright Browsers
+        working-directory: ./client
         run: npx playwright install --with-deps
 
       - name: Run Playwright tests
+        working-directory: ./client
         run: npx playwright test
 
       - uses: actions/upload-artifact@v4
