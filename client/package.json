@@ -6,9 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview",
-    "e2e": "npx playwright test",
-    "e2e:ui": "npx playwright test --ui"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.0.18",

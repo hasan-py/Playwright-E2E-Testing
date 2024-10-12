@@ -81,8 +81,8 @@ export default function Review() {
 
             {avgRating() > 0 ? (
               <Flex my={4} alignItems={"center"} className="text-black">
-                {[...Array(Math.floor(+avgRating()))]?.map((_, key) => (
-                  <StarIcon key={key} mx={"2px"} color="#f59e0b" />
+                {[...Array(Math.floor(+avgRating()))]?.map((_) => (
+                  <StarIcon mx={"2px"} color="#f59e0b" />
                 ))}
                 <Text marginLeft={2}>{avgRating()?.toFixed(2)}</Text>
 
@@ -103,8 +103,8 @@ export default function Review() {
             </Heading>
             <hr className="border-b-[1px] border-gray-100" />
 
-            {data?.reviews?.map((item: any, key:number) => (
-              <Box key={key} my={10} position={"relative"}>
+            {data?.reviews?.map((item: any) => (
+              <Box my={10} position={"relative"}>
                 <Flex flex="1" gap="4" alignItems="center" flexWrap="wrap">
                   <Box>
                     <Heading size="sm" className="text-black">
@@ -124,8 +124,8 @@ export default function Review() {
 
                     {+item?.rating > 0 ? (
                       <Flex alignItems={"center"}>
-                        {[...Array(Math.floor(+item?.rating))]?.map((_, key) => (
-                          <StarIcon key={key} mx={"2px"} color="#f59e0b" />
+                        {[...Array(Math.floor(+item?.rating))]?.map((_) => (
+                          <StarIcon mx={"2px"} color="#f59e0b" />
                         ))}
                         <Text marginLeft={2}>{item?.rating}</Text>
                       </Flex>
